@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/asharp02/be-the-best/issues"
   },
-  "homepage": "https://github.com/asharp02/be-the-best#readme"
+  "homepage": "https://github.com/asharp02/be-the-best#readme",
+  "dependencies": {
+    "es6-promise": "^4.2.8",
+    "isomorphic-fetch": "^2.2.1",
+    "jsdom": "^16.2.2"
+  }
 }
