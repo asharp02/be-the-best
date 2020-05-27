@@ -12,16 +12,15 @@ async function scrapeIMDB() {
         ...dom.window.document.querySelectorAll(".sodatext")
     ];
     triviaList = triviaDivList.map(triviaDiv => {
-        return triviaDiv.textContent;
+        return `"${triviaDiv.textContent.replace(/"/g, "'").trim()}"`;
     });
+
     await updateFile(triviaList);
 }
 
 scrapeIMDB();
 async function updateFile(trivia) {
-    console.log(trivia);
-    // triviaList = `[${trivia.toString()}]`;
-    fs.writeFile("trivia.json", trivia, function(err) {
+    fs.writeFile("trivia.json", `[${trivia}]`, function(err) {
         if (err) throw err;
         console.log("Updated");
     });
